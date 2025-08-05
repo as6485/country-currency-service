@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: country-currency-deployment
+  name: country-currency-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: country-currency-deployment
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: country-currency-deployment
+    spec:
+      containers:
+      - image: country-currency-minikube-image:latest
+        imagePullPolicy: Never
+        name: country-currency-minikube-image
+        ports:
+        - containerPort: 8080
+        resources: {}
+status: {}
